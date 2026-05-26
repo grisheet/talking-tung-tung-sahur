@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "Talking Tung Tung Sahur",
+    "slug": "talking-tung-tung-sahur",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#1a1a2e"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "static"
+    },
+    "platforms": ["ios", "android", "web"]
+  }
+}
