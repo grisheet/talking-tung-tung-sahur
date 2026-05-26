@@ -4,13 +4,7 @@ import {StatusBar} from 'expo-status-bar';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import { Toaster } from 'sonner-native';
 
-import {initialize} from "./magically/init";
-import { createNavigationLogger } from './magically/utils/NavigationLogger';
-
-initialize();
-
 import RootNavigator from './navigation/RootNavigator';
-import {MagicallyAlertComponent} from "./components/ui";
 import { ThemeProvider, useTheme, useThemeMode } from './contexts/ThemeContext';
 
 /**
@@ -38,14 +32,10 @@ function AppContent() {
   };
 
   return (
-    <NavigationContainer theme={navigationTheme}
-    onStateChange={createNavigationLogger()}>
-      <StatusBar style={statusBarStyle === 'light' ? 'light' : 'dark'} />
-      <Toaster theme={themeMode} richColors />
-      <>{/* DO NOT REMOVE the magically alert component. Otherwise alerts will not show up. */}</>
-      <MagicallyAlertComponent/>
-      {/* DO NOT REMOVE the magically alert component. Otherwise alerts will not show up. */}
+    <NavigationContainer theme={navigationTheme}>
+      <StatusBar style={statusBarStyle} />
       <RootNavigator />
+      <Toaster />
     </NavigationContainer>
   );
 }
